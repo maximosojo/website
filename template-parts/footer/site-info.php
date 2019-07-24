@@ -14,13 +14,14 @@
  */
 
 ?>
-<div class="site-info">
+<p class="copyright text-muted">
 	<?php
 	if ( function_exists( 'the_privacy_policy_link' ) ) {
 		the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 	}
 	?>
-	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyseventeen' ) ); ?>" class="imprint">
-		<?php printf( __( 'Proudly powered by %s', 'twentyseventeen' ), 'WordPress' ); ?>
+			
+	<a href="<?php echo esc_url( __( 'https://maximosojo.com/', 'website' ) ); ?>" class="imprint">
+		<?php printf( __( 'Proudly powered by %s', 'website' ), 'Máximo Sojo' ); ?>
 	</a>
-</div><!-- .site-info -->
+</p>
