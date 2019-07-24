@@ -53,6 +53,27 @@ if ( ! function_exists( 'website_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'website_setup' );
 
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function website_widgets_footer()
+{
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer', 'website' ),
+			'id'            => 'footer-widget',
+			'description'   => __( 'Add widgets here to appear in your footer.', 'website' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+}
+add_action( 'widgets_init', 'website_widgets_footer' );
 
 function website_menu_classes($classes,$item,$args)
 {

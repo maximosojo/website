@@ -27,7 +27,7 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!-- Custom styles for this template -->
 <link href="http://localhost/wordpress/wp-content/themes/website/assets/css/custom.css" rel="stylesheet">
-<?php //wp_head(); ?>
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
