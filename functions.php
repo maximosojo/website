@@ -37,6 +37,13 @@ if ( ! function_exists( 'website_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 1568, 9999 );
 
+		register_nav_menus(
+			array(
+				'top' => __( 'Top Menu', 'website' ),
+				'footer' => __( 'Footer Menu', 'website' )
+			)
+		);
+
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
@@ -44,6 +51,17 @@ if ( ! function_exists( 'website_setup' ) ) :
 		add_editor_style( 'style-editor.css' );
 	}
 endif;
+add_action( 'after_setup_theme', 'website_setup' );
+
+
+function website_menu_classes($classes,$item,$args)
+{
+	if ($args->theme_location == "top") {
+		$classes[] = "nav-item";
+	}
+	return $classes;
+}
+add_filter("nav_menu_css_class","website_menu_classes",1,3);
 
 /**
  * Custom template tags for the theme.
