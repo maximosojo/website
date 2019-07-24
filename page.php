@@ -24,20 +24,18 @@ get_header();
 	    <div class="row">
 	      	<div class="col-lg-8 col-md-10 mx-auto">
 	      		<?php
-	      		if ( have_posts() ) {
+	      		/* Start the Loop */
+				while ( have_posts() ) :
+					the_post();
 
-					// Load posts loop.
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'template-parts/content/content' );
+					get_template_part( 'template-parts/content/content', 'page' );
+
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) {
+						comments_template();
 					}
 
-				} else {
-
-					// If no content, include the "No posts found" template.
-					get_template_part( 'template-parts/content/content', 'none' );
-
-				}
+				endwhile; // End of the loop.
 				?>
 	      	</div>
 	  	</div>

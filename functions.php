@@ -63,6 +63,19 @@ function website_menu_classes($classes,$item,$args)
 }
 add_filter("nav_menu_css_class","website_menu_classes",1,3);
 
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function website_custom_excerpt_length( $length )
+{
+    return 20;
+}
+add_filter( 'excerpt_length', 'website_custom_excerpt_length', 999 );
+
 /**
  * Custom template tags for the theme.
  */
