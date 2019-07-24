@@ -33,11 +33,20 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-
+<?php 
+  $pageID = get_option('page_for_posts');
+  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $pageID ), 'website-the-post-big' );
+  $srcImage = "";
+  if (is_home() && !is_front_page() ) :
+    $srcImage = $image[0];    
+  else:
+    $src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'website-the-post-big');
+    $srcImage = $src[0];
+  endif;
+?> 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
-  <?php website_post_thumbnail();?>
-	<div class="overlay"></div>
+<header class="masthead" style="background-image: url(<?php echo esc_url($srcImage); ?>)">
+  <div class="overlay"></div>
 	<div class="container">
   		<div class="row">
     		<div class="col-lg-8 col-md-10 mx-auto">
@@ -48,7 +57,7 @@
               if ( $description || is_customize_preview() ) :
                 ?>
         			   <span class="subheading"><?php echo $description; ?></span>
-              <?php endif; ?>
+              <?php endif; ?>              
       			</div>
     		</div>
   		</div>
