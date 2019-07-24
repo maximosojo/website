@@ -18,4 +18,30 @@ error_reporting(E_ALL);
  */
 
 get_header();
+?>
+	<!-- Main Content -->
+  	<div class="container">
+	    <div class="row">
+	      	<div class="col-lg-8 col-md-10 mx-auto">
+	      		<?php
+				if ( have_posts() ) {
+
+					// Load posts loop.
+					while ( have_posts() ) {
+						the_post();
+						get_template_part( 'template-parts/content/content' );
+					}
+
+				} else {
+
+					// If no content, include the "No posts found" template.
+					get_template_part( 'template-parts/content/content', 'none' );
+
+				}
+				?>
+	      	</div>
+	  	</div>
+	</div>
+
+<?php
 get_footer();

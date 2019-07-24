@@ -36,13 +36,19 @@
 
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+  <?php website_post_thumbnail();?>
 	<div class="overlay"></div>
 	<div class="container">
   		<div class="row">
     		<div class="col-lg-8 col-md-10 mx-auto">
       			<div class="site-heading">
         			<h1><?php single_post_title(); ?></h1>
-        			<span class="subheading"><?php the_archive_description(); ?></span>
+              <?php
+              $description = get_bloginfo( 'description', 'display' );
+              if ( $description || is_customize_preview() ) :
+                ?>
+        			   <span class="subheading"><?php echo $description; ?></span>
+              <?php endif; ?>
       			</div>
     		</div>
   		</div>
