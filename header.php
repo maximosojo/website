@@ -19,8 +19,33 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-
-<?php wp_head(); ?>
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Custom fonts for this template -->
+<!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!-- Custom styles for this template -->
+<link href="wp-content/themes/website/assets/css/custom.css" rel="stylesheet">
+<?php //wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+	<div class="overlay"></div>
+	<div class="container">
+  		<div class="row">
+    		<div class="col-lg-8 col-md-10 mx-auto">
+      			<div class="site-heading">
+        			<h1><?php single_post_title(); ?></h1>
+        			<span class="subheading"><?php the_archive_description(); ?></span>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+</header>
+
