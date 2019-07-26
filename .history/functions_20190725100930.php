@@ -5,7 +5,6 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Website
- * @author Máximo Sojo <maxsojo13@gmail.com>
  * @since 1.0.0
  */
 

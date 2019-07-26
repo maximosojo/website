@@ -1,6 +1,5 @@
 <?php
 /**
- * The navigation top template
  * 
  * @package website
  * @author Máximo Sojo <maxsojo13@gmail.com>

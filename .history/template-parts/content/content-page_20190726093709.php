@@ -4,8 +4,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Website
  * @author Máximo Sojo <maxsojo13@gmail.com>
+ * @package Website
  * @since 1.0.0
  */
 
