@@ -50,6 +50,19 @@ if ( ! function_exists( 'website_setup' ) ) :
 
 		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
+
+		/**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support( 'custom-logo', array(
+			'height'      => 60,
+			'width'       => 250,
+			'flex-width'  => true,
+			'flex-height' => true,
+			'header-text' => array( 'site-title', 'site-description' ),
+		) );
 	}
 endif;
 add_action( 'after_setup_theme', 'website_setup' );

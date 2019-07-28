@@ -71,6 +71,13 @@ img::-moz-selection {
   background: transparent;
 }
 
+/* Logo custom-logo */
+.custom-logo {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 10rem;
+}
+
 #mainNav {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
@@ -177,11 +184,11 @@ header.masthead .overlay {
   opacity: 0.5;
 }
 
-header.masthead img {
+/* header.masthead img {
     position: absolute;
     width: 100%;
     height: 100%;
-}
+} */
 
 header.masthead .page-heading,
 header.masthead .post-heading,

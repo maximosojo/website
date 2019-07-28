@@ -52,6 +52,9 @@
   		<div class="row">
     		<div class="col-lg-8 col-md-10 mx-auto">
       			<div class="site-heading">
+              <?php if ( !is_home() && function_exists( 'the_custom_logo' ) ) : ?>
+                <?php the_custom_logo(); ?>
+              <?php endif; ?>
         			<h1><?php single_post_title(); ?></h1>
               <?php
               $description = get_bloginfo( 'description', 'display' );
