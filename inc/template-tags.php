@@ -15,32 +15,29 @@ if ( ! function_exists( 'website_post_thumbnail' ) ) :
 	 * element when on single views.
 	 */
 	function website_post_thumbnail() {
-		if ( is_singular() ) :
-				the_post_thumbnail();
-		endif;
+		//if ( is_singular() ) :
+				the_post_thumbnail('post-thumbnail',["class" => "img-fluid"]);
+		//endif;
 	}
 endif;
 
-if ( ! function_exists( 'website_posted_on' ) ) :
+if ( ! function_exists( 'website_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function website_posted_on() {
+	function website_posted_by() {
+		$byline = '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>';
+		echo sprintf('<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">%s</a> <span class="fa fa-user"></span></p>',$byline);
+	}
+endif;
+
+if ( ! function_exists( 'website_posted_at' ) ) :
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function website_posted_at() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
-
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
-		);
-
-		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
-		$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
-		
-		echo '<p class="post-meta">Posted by <a href="#">'.$byline.'</a> '.$posted_on.'</p>';
+		$time_string = sprintf( $time_string,esc_attr( get_the_modified_date( 'c' ) ),esc_html( get_the_modified_date() ));
+		echo sprintf('<p class="date col-lg-12 col-md-12 col-6"><a href="#">%s</a> <span class="fa fa-calendar"></span></p>',$time_string);
 	}
 endif;

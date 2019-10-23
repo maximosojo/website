@@ -19,30 +19,27 @@ error_reporting(E_ALL);
  */
 
 get_header();
-?>
-	<!-- Main Content -->
-  	<div class="container">
-	    <div class="row">
-	      	<div class="col-lg-8 col-md-10 mx-auto">
-	      		<?php
-	      		if ( have_posts() ) {
 
-					// Load posts loop.
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'template-parts/content/content' );
-					}
-
-				} else {
-
-					// If no content, include the "No posts found" template.
-					get_template_part( 'template-parts/content/content', 'none' );
-
+if ( have_posts() ) {?>
+	<section class="post-content-area mt-4">
+		<div class="container">
+			<div class="row">
+				<?php
+				// Load posts loop.
+				while ( have_posts() ) {
+					?><div class="col-lg-4 posts-list"><?php
+					the_post();
+					get_template_part( 'template-parts/content/content' );
+					?></div><?php
 				}
 				?>
-	      	</div>
-	  	</div>
-	</div>
-	<hr>
+			</div>
+		</div>
+	</section>
 <?php
+} else {
+	// If no content, include the "No posts found" template.
+	get_template_part( 'template-parts/content/content', 'none' );
+}
+
 get_footer();

@@ -20,27 +20,21 @@ error_reporting(E_ALL);
 
 get_header();
 ?>
-	<!-- Main Content -->
-  	<div class="container">
-	    <div class="row">
-	      	<div class="col-lg-8 col-md-10 mx-auto">
-	      		<?php
-	      		/* Start the Loop */
-				while ( have_posts() ) :
-					the_post();
+	<section class="post-content-area">
+  		<?php
+  		/* Start the Loop */
+		while ( have_posts() ) :
+			the_post();
 
-					get_template_part( 'template-parts/content/content', 'page' );
+			get_template_part( 'template-parts/content/content', 'page' );
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
 
-				endwhile; // End of the loop.
-				?>
-	      	</div>
-	  	</div>
-	</div>
-	<hr>
+		endwhile; // End of the loop.
+		?>
+	</section>
 <?php
 get_footer();

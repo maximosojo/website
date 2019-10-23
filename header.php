@@ -23,7 +23,7 @@
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!-- Custom fonts for this template -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!-- Custom styles for this template -->
@@ -44,27 +44,40 @@
     $src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'website-the-post-big');
     $srcImage = $src[0];
   endif;
-?> 
-<!-- Page Header -->
-<header class="masthead" style="background-image: url(<?php echo esc_url($srcImage); ?>)">
-  <div class="overlay"></div>
-	<div class="container">
-  		<div class="row">
-    		<div class="col-lg-8 col-md-10 mx-auto">
-      			<div class="site-heading">
-              <?php if ( !is_home() && function_exists( 'the_custom_logo' ) ) : ?>
-                <?php the_custom_logo(); ?>
-              <?php endif; ?>
-        			<h1><?php single_post_title(); ?></h1>
-              <?php
-              $description = get_bloginfo( 'description', 'display' );
-              if ( $description || is_customize_preview() ) :
-                ?>
-        			   <span class="subheading"><?php echo $description; ?></span>
-              <?php endif; ?>              
-      			</div>
-    		</div>
-  		</div>
-	</div>
-</header>
+?>
+
+<?php if ( !is_home() && is_front_page() ) : ?>
+  <section class="banner-area">
+    <div class="container">
+      <div class="row fullscreen align-items-center justify-content-between">
+        <div class="col-lg-6 col-md-6 banner-left">
+          <h6>Este soy yo</h6>
+          <h1><?php single_post_title(); ?></h1>
+          <?php
+          $description = get_bloginfo( 'description', 'display' );
+          if ( $description || is_customize_preview() ) :
+            ?>
+             <p><?php echo $description; ?></p>
+          <?php endif; ?>
+        </div>
+        <div class="col-lg-6 col-md-6 banner-right d-flex align-self-end">
+          <img class="img-fluid" src="<?php echo esc_url($srcImage); ?>" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+<?php else: ?>
+  <section class="relative about-banner"> 
+    <div class="overlay overlay-bg"></div>
+    <div class="container">       
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="about-content col-lg-12">
+          <h1 class="text-white">
+            <?php single_post_title(); ?>
+          </h1>
+        </div>  
+      </div>
+    </div>
+  </section>
+<?php endif; ?>
 

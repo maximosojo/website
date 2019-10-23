@@ -21,8 +21,9 @@
 		the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 	}
 	?>
-			
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los Derechos Reservados |
+	Con <i class="fa fa-heart-o" aria-hidden="true" style="color:red;"></i> desde Venezuela por 
 	<a href="<?php echo esc_url( __( 'https://maximosojo.com/', 'website' ) ); ?>" class="imprint">
-		<?php printf( __( 'Proudly powered by %s', 'website' ), 'Máximo Sojo' ); ?>
+		<?php printf( __( '%s', 'website' ), 'Máximo Sojo' ); ?>
 	</a>
 </p>
