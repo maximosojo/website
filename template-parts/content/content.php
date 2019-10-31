@@ -10,11 +10,13 @@
  */
 
 ?>
-<div class="single-post row" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="col-lg-12 col-md-12">
+<article class="single-post row">
+	<div class="col-lg-7 col-md-7">
 		<div class="feature-img">
 			<?php website_post_thumbnail(); ?>
 		</div>
+	</div>
+	<div class="col-lg-5 col-md-5">
 		<?php
 			if ( is_sticky() && is_home() && ! is_paged() ) {
 				printf( '<span class="sticky-post">%s</span>', _x( 'Featured', 'post', 'twentynineteen' ) );
@@ -29,5 +31,6 @@
 		<p class="excert">
 			<?php the_excerpt(); ?>
 		</p>
+		<?php website_posted_by() ?>
 	</div>
-</div>
+</article>

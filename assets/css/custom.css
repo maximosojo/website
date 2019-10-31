@@ -41,7 +41,7 @@ $title-color  : #222222;
 $text-color   : #777777;
 
 $white      : #fff;
-$offwhite   : #222537;
+$offwhite   : #f9f9ff;
 $black      : #222;
 
 */
@@ -89,6 +89,10 @@ $black      : #222;
   /* Microsoft Edge */
   color: #777777;
   font-weight: 300;
+}
+
+html,body{
+  background: #f9f9ff;
 }
 
 body {
@@ -155,7 +159,7 @@ a, a:focus, a:hover {
 }
 
 .gray-bg {
-  background: #222537;
+  background: #f9f9ff;
 }
 
 h1, h2, h3,
@@ -818,7 +822,7 @@ td, th {
 /* =================================== */
 /*---------- Start Elements Page -------------*/
 .whole-wrap {
-  background-color: #222537;
+  background-color: #f9f9ff;
 }
 
 .generic-banner {
@@ -890,7 +894,7 @@ td, th {
 
 /*---------- End Elements Page -------------*/
 .sample-text-area {
-  background: #222537;
+  background: #f9f9ff;
   padding: 100px 0 70px 0;
 }
 
@@ -956,7 +960,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button-area {
-  background: #222537;
+  background: #f9f9ff;
 }
 
 .button-area .border-top-generic {
@@ -1037,23 +1041,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .genric-btn.default {
   color: #222222;
-  background: #222537;
+  background: #f9f9ff;
   border: 1px solid transparent;
 }
 
 .genric-btn.default:hover {
-  border: 1px solid #222537;
+  border: 1px solid #f9f9ff;
   background: #fff;
 }
 
 .genric-btn.default-border {
-  border: 1px solid #222537;
+  border: 1px solid #f9f9ff;
   background: #fff;
 }
 
 .genric-btn.default-border:hover {
   color: #222222;
-  background: #222537;
+  background: #f9f9ff;
   border: 1px solid transparent;
 }
 
@@ -1179,33 +1183,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .genric-btn.link {
   color: #222222;
-  background: #222537;
+  background: #f9f9ff;
   text-decoration: underline;
   border: 1px solid transparent;
 }
 
 .genric-btn.link:hover {
   color: #222222;
-  border: 1px solid #222537;
+  border: 1px solid #f9f9ff;
   background: #fff;
 }
 
 .genric-btn.link-border {
   color: #222222;
-  border: 1px solid #222537;
+  border: 1px solid #f9f9ff;
   background: #fff;
   text-decoration: underline;
 }
 
 .genric-btn.link-border:hover {
   color: #222222;
-  background: #222537;
+  background: #f9f9ff;
   border: 1px solid transparent;
 }
 
 .genric-btn.disable {
   color: #222222, 0.3;
-  background: #222537;
+  background: #f9f9ff;
   border: 1px solid transparent;
   cursor: not-allowed;
 }
@@ -2052,7 +2056,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   transition: all 0.5s;
   z-index: 997;
-  background: #2c2f42;
+  background: #fff;
 }
 
 #header.header-scrolled {
@@ -2065,9 +2069,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #logo > a{
-  color: #7e99fe;
+  color: #222222;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 @media (max-width: 673px) {
@@ -2151,7 +2155,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 8px 0px 8px;
   text-decoration: none;
   display: inline-block;
-  color: #fff;
+  color: #222;
   font-weight: 500;
   font-size: 12px;
   text-transform: uppercase;
@@ -2445,7 +2449,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /*-------- Start Banner Area ------------*/
 .banner-area {
-  background: #222537;
+  background: #f9f9ff;
 }
 
 .banner-area .fullscreen {
@@ -2456,14 +2460,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 2px;
-  color: #dadada;
+  /*color: #dadada;*/
 }
 
 .banner-left h1 {
   margin: 20px 0;
   font-size: 60px;
   text-transform: uppercase;
-  color: #fff;
+  /*color: #fff;*/
 }
 
 @media (max-width: 991px) {
@@ -2733,7 +2737,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*--------- End Portfolio Area -------------*/
 /*--------- start testimonial area  -------------*/
 .testimonial-area {
-  background-color: #222537;
+  background-color: #f9f9ff;
 }
 
 .testimonial-area .owl-controls {
@@ -2811,7 +2815,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   text-align: center;
-  background-color: #222537;
+  background-color: #f9f9ff;
   padding: 40px 20px;
 }
 
@@ -2909,7 +2913,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*--------- end price  Area -------------*/
 /*-------- start recent-blog Area -------------*/
 .recent-blog-area {
-  background: #222537;
+  background: #f9f9ff;
 }
 
 .recent-blog-area h1 {
@@ -3076,7 +3080,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*  About Page Styles
 /* =================================== */
 .aboutpage-feedback-area {
-  background: #222537 !important;
+  background: #f9f9ff !important;
 }
 
 /*-------- Start Skillbar Style  -------------*/
@@ -3099,7 +3103,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /*--------  End Skillbar Style  -------------*/
 .timeline ul li {
-  background: #222537;
+  background: #f9f9ff;
   position: relative;
   margin: 0 auto;
   width: 2px;
@@ -3387,7 +3391,7 @@ dl.accordion.time-line:before {
 }
 
 .blog-page {
-  background: #222537;
+  background: #f9f9ff;
 }
 
 .blog-header-content h1 {
@@ -3407,7 +3411,7 @@ dl.accordion.time-line:before {
 }
 
 .top-category-widget-area {
-  background-color: #222537;
+  background-color: #f9f9ff;
 }
 
 .top-category-widget-area .single-cat-widget {
@@ -3466,7 +3470,8 @@ dl.accordion.time-line:before {
 }
 
 .post-content-area {
-  background-color: #222537;
+  background-color: #f9f9ff;
+  margin-top: 5rem;
 }
 
 .post-content-area .single-post {
@@ -3515,12 +3520,14 @@ dl.accordion.time-line:before {
 .post-content-area .single-post .date a,
 .post-content-area .single-post .view a,
 .post-content-area .single-post .comments a {
-  color: #777777;
+  color: #222222;
+  font-weight: 700;
   margin-right: 10px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  margin-left: .5rem;
 }
 
 .post-content-area .single-post .user-name a:hover,
@@ -3543,7 +3550,7 @@ dl.accordion.time-line:before {
 }
 
 .post-content-area .single-post .posts-title h3 {
-  margin: 20px 0px;
+  /*margin: 20px 0px;*/
 }
 
 .post-content-area .single-post .excert {
@@ -3563,6 +3570,10 @@ dl.accordion.time-line:before {
 .post-content-area .single-post .primary-btn:hover {
   background: #8490ff !important;
   color: #fff !important;
+}
+
+.posts-list{
+  border-right: 1px solid #eee;
 }
 
 .posts-list .posts-title h3 {
@@ -3934,7 +3945,7 @@ dl.accordion.time-line:before {
 /*============ End Blog Home Styles  =============*/
 /*============ Start Blog Single Styles  =============*/
 .single-post-area {
-  padding-top: 80px;
+  padding-top: 1rem;
   padding-bottom: 80px;
 }
 
@@ -4231,7 +4242,7 @@ dl.accordion.time-line:before {
 /*  Contact Page Styles
 /* =================================== */
 .contact-page-area {
-  background: #222537;
+  background: #f9f9ff;
 }
 
 .contact-page-area .map-wrap {
@@ -4320,7 +4331,7 @@ dl.accordion.time-line:before {
 /*  Footer Styles
 /* =================================== */
 .footer-area {
-  background-color: #2c2f42;
+  background-color: #04091e;
 }
 
 .single-footer-widget h4 {
@@ -4333,7 +4344,7 @@ dl.accordion.time-line:before {
   border: none;
   width: 80% !important;
   font-weight: 300;
-  background: #222537;
+  background: #f9f9ff;
   padding-left: 20px;
   border-radius: 0;
   font-size: 14px;
@@ -4348,6 +4359,7 @@ dl.accordion.time-line:before {
 
 .single-footer-widget ul li {
   margin-bottom: 10px;
+  display: inline-block;
 }
 
 .single-footer-widget ul li a {
@@ -4386,7 +4398,7 @@ dl.accordion.time-line:before {
 }
 
 .single-footer-widget .btn {
-  font-size: 1.2rem;
+  font-size: .9rem;
   border-radius: 0;
   background: #8490ff;
   color: #fff;
@@ -4491,3 +4503,10 @@ dl.accordion.time-line:before {
 }
 
 /*-------- end footer Area -------------*/
+
+.single-entry-meta {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 6px solid #ECECEC;
+    overflow: visible;
+}

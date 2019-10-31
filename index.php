@@ -21,18 +21,26 @@ error_reporting(E_ALL);
 get_header();
 
 if ( have_posts() ) {?>
-	<section class="post-content-area mt-4">
+	<section class="post-content-area">
 		<div class="container">
 			<div class="row">
-				<?php
-				// Load posts loop.
-				while ( have_posts() ) {
-					?><div class="col-lg-4 posts-list"><?php
-					the_post();
-					get_template_part( 'template-parts/content/content' );
-					?></div><?php
-				}
-				?>
+				<div class="col-lg-8 posts-list">
+					<h4>POSTS POPULARES</h4><br>
+					<?php
+					// Load posts loop.
+					while ( have_posts() ) {
+						?>
+							<?php
+								the_post();
+								get_template_part( 'template-parts/content/content' );
+							?>						
+						<?php
+					}
+					?>
+				</div>
+				<div class="col-lg-4 sidebar-widgets">
+					<?php get_template_part( 'template-parts/content/sidebar' ); ?>
+				</div>
 			</div>
 		</div>
 	</section>

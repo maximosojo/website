@@ -11,31 +11,27 @@
 
 ?>
 
-<article class="single-post row" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="row">
+	<div class="col-lg-8 posts-list">
+		<article class="single-post row" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="col-12">
 		<div class="feature-img">
 			<?php website_post_thumbnail(); ?>
 		</div>									
 	</div>
-	<div class="col-3 meta-details">
-		<ul class="tags">
-			<li><a href="#">Tecnología</a></li>
-		</ul>
-		<div class="user-details row">
-			<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span class="lnr lnr-user"></span></p>
-			<p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span class="lnr lnr-calendar-full"></span></p>
-			<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
-			<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span></p>
-			<ul class="social-links col-lg-12 col-md-12 col-6">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-github"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance"></i></a></li>
-			</ul>																				
+	<div class="col-12">
+		<?php
+			if ( is_sticky() && is_home() && ! is_paged() ) {
+				printf( '<span class="sticky-post">%s</span>', _x( 'Featured', 'post', 'twentynineteen' ) );
+			}
+			if ( is_singular() ) :
+				the_title( '<h2 class="post-title mt-20 mb-20">', '</h2>' );
+			endif;
+			?>
+		<div class="entry-meta single-entry-meta clearfix">
+			<?php get_the_title() ?>
+			<?php website_posted_by() ?>			
 		</div>
-	</div>
-	<div class="col-9">
-		<h3 class="mt-20 mb-20"><?php get_the_title() ?></h3>
 		<?php
 		the_content(
 			sprintf(
@@ -61,3 +57,8 @@
 		?>
 	</div>
 </article>
+	</div>
+	<div class="col-lg-4 sidebar-widgets">
+		<?php get_template_part( 'template-parts/content/sidebar' ); ?>
+	</div>
+</div>

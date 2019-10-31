@@ -23,7 +23,7 @@ get_header();
 	<section class="post-content-area single-post-area">
 	  	<div class="container">
 		    <div class="row">
-		      	<div class="col-12 posts-list mx-auto">
+		      	<div class="col-12 mx-auto">
 		      		<?php
 		      		/* Start the Loop */
 					while ( have_posts() ) :

@@ -26,8 +26,20 @@ if ( ! function_exists( 'website_posted_by' ) ) :
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
 	function website_posted_by() {
-		$byline = '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>';
-		echo sprintf('<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">%s</a> <span class="fa fa-user"></span></p>',$byline);
+		$fname = get_the_author_meta('first_name');
+		$lname = get_the_author_meta('last_name');
+		$full_name = '';
+
+		if(empty($fname)){
+		    $full_name = $lname;
+		} elseif(empty($lname)){
+		    $full_name = $fname;
+		} else {
+		    $full_name = "{$fname} {$lname}";
+		}
+
+		$byline = '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html($full_name) . '</a>';
+		echo sprintf('<p class="user-name"><img src="https://www.gravatar.com/avatar/55f4735ae16bbf2f3a056eed5081fec1?s=40" alt="" class="rounded-circle">%s</p>',$byline);
 	}
 endif;
 
